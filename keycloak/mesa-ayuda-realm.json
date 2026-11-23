@@ -1,0 +1,72 @@
+{
+  "realm": "mesa-ayuda",
+  "enabled": true,
+  "displayName": "Mesa de ayuda - Error de Capa 8",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "sslRequired": "none",
+  "roles": {
+    "realm": [
+      { "name": "solicitante", "description": "Registra y consulta sus propios reportes" },
+      { "name": "agente", "description": "Atiende la bandeja completa y administra los plazos" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "mesa-ayuda-web",
+      "name": "Cliente Angular",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": ["http://localhost:4200/*"],
+      "webOrigins": ["http://localhost:4200"],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "http://localhost:4200/*"
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "solicitante1",
+      "email": "solicitante1@mesa-ayuda.test",
+      "firstName": "Sara",
+      "lastName": "Solicitante",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [{ "type": "password", "value": "solicitante1", "temporary": false }],
+      "realmRoles": ["solicitante"]
+    },
+    {
+      "username": "solicitante2",
+      "email": "solicitante2@mesa-ayuda.test",
+      "firstName": "Samuel",
+      "lastName": "Solicitante",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [{ "type": "password", "value": "solicitante2", "temporary": false }],
+      "realmRoles": ["solicitante"]
+    },
+    {
+      "username": "agente1",
+      "email": "agente1@mesa-ayuda.test",
+      "firstName": "Ana",
+      "lastName": "Agente",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [{ "type": "password", "value": "agente1", "temporary": false }],
+      "realmRoles": ["agente"]
+    },
+    {
+      "username": "agente2",
+      "email": "agente2@mesa-ayuda.test",
+      "firstName": "Andrés",
+      "lastName": "Agente",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [{ "type": "password", "value": "agente2", "temporary": false }],
+      "realmRoles": ["agente"]
+    }
+  ]
+}
