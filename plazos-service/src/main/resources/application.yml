@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: plazos-service
+  datasource:
+    # En Docker se toman de compose.yaml; en local se usan los valores por defecto
+    url: ${DB_URL:jdbc:postgresql://localhost:5434/plazos}
+    username: ${DB_USER:plazos}
+    password: ${DB_PASSWORD:plazos}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
